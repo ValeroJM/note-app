@@ -23,5 +23,16 @@ export default class NotesView{
         btnAddNote.addEventListener("click", () => {
             this.onNoteAdd();
         });
+
+        [inpTitle, inpBody].forEach(inputField => {
+            inputField.addEventListener("blur", () => {
+                const updatedTitle = inpTitle.value.trim();
+                const updatedBody = inpBody.value.trim();
+
+                this.onNoteEdit(updatedTitle, updatedBody);
+            });
+        });
+
+        //TODO: Hide the note preview by default
     }
 }
