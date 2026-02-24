@@ -1,4 +1,4 @@
-//import NotesAPI from "./NotesAPI.js"
+import NotesAPI from "./NotesAPI.js";
 import NotesView from "./NotesView.js";
 
 /*
@@ -22,3 +22,5 @@ const view = new NotesView(app, {
         console.log(newBody);
     }
 });
+
+view.updateNoteList(NotesAPI.getAllNotes());
