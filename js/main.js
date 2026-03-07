@@ -17,6 +17,12 @@ const view = new NotesView(app, {
     onNoteAdd(){
         console.log("Let's add a new note!");
     },
+    onNoteSelect(id){
+        console.log("Note Selected: " + id);
+    },
+    onNoteDelet(id){
+        console.log("Note DELETED: " + id);
+    },
     onNoteEdit(newTitle, newBody){
         console.log(newTitle);
         console.log(newBody);
