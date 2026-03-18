@@ -33,7 +33,7 @@ export default class NotesView{
             });
         });
 
-        //TODO: Hide the note preview by default
+        this.updateNotePreviewVisibility(false);
     }
 
     //This method will create the sidebar notes
@@ -90,5 +90,9 @@ export default class NotesView{
         });
 
         this.root.querySelector(`.note__list-item[data-note-id="${note.id}"]`).classList.add("note__list-item--selected");
+    }
+
+    updateNotePreviewVisibility(visible){
+        this.root.querySelector(".notes__preview").style.visible = visible ? "visible" : "hidden";
     }
 }
