@@ -1,5 +1,5 @@
-import NotesView from "./NotesView";
-import NotesAPI from "./NotesAPI";
+import NotesView from "./NotesView.js";
+import NotesAPI from "./NotesAPI.js";
 
 export default class{
     constructor(root){
@@ -34,7 +34,7 @@ export default class{
     _handlers() {
         return{
             onNoteSelect: noteId => {
-                const selectedNote = this.notes.find(notes => note.id == noteId);
+                const selectedNote = this.notes.find(note => note.id == noteId);
                 this._setActivesNote(selectedNote);
             },
              onNoteAdd: () => {
@@ -58,7 +58,7 @@ export default class{
              onNoteDelete: noteId => {
                NotesAPI.deleteNote(noteId);
                this._refreshNotes();
-            }
-        }
+            },
+        };
     }
 }
